@@ -1,11 +1,23 @@
+require('dotenv').config()
+
 const express = require('express');
 const app = express();
+const mongoose = require("mongoose")
 
 
 app.use('/', require('./routes/index'))
- 
-app.listen( process.env.port || 3000, () => {
-  console.log('Web Server is listening at port ' + ( process.env.port || 3000));
-});
+app.use('/contacts', require('./routes/contacts'))
+
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => {
+    // listen for requests
+    app.listen(process.env.PORT, () => {
+    console.log('listening on port', process.env.PORT)
+    })
+  })
+  .catch((error) => {
+    console.log(error)
+  })
+
 
 
