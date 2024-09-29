@@ -3,5 +3,9 @@
 GET http://localhost:3000/contacts
 ###
 GET http://localhost:3000/contacts/66f8c1eb3e671b218ce0bb13
+###
+GET https://cse-341-jzht.onrender.com/contacts
+###
+GET https://cse-341-jzht.onrender.com/contacts/66f8c2f03e671b218ce0bb16
 
 
